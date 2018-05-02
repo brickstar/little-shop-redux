@@ -15,4 +15,5 @@ group :development, :test do
   gem 'shotgun'
   gem 'tux'
   gem 'simplecov'
+  gem 'database_cleaner'
 end
