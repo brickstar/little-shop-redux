@@ -5,6 +5,7 @@ require 'csv'
 require 'pry'
 
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |merchant|
+binding.pry
   Merchant.create(id: merchant[:id],
     name: merchant[:name],
     created_at: merchant[:created_at],
