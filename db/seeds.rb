@@ -1,8 +1,7 @@
-require_relative '../app/models/merchant.rb'
+require './app/models/merchant.rb'
 require 'csv'
 require 'pry'
-
+binding.pry
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
-  binding.pry
-  Merchant.create(name: m[:name])
+  Merchant.create(m.to_hash)
 end
