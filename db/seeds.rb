@@ -1,32 +1,15 @@
-require 'CSV'
-# require File.expand_path("../../config/environment", __FILE__)
+require './app/models/merchant.rb'
+require 'csv'
+require 'pry'
 
-merchants = CSV.open('./data/merchants.csv', headers: true, header_converters: :symbol)
-# invoices = CSV.open('./data/invoices.csv', headers: true, header_converters: :symbol)
-# items = CSV.open('./data/items.csv', headers: true, header_converters: :symbol)
+CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
+  Merchant.create(m.to_hash)
+end
 
+CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
+  Merchant.create(m.to_hash)
+end
 
-merchants.each do |merchant|
-  Merchant.create(id: merchant[:id],
-    name: merchant[:name],
-    created_at: merchant[:created_at],
-    updated_at: merchant[:updated_at])
-  end
-
-  # invoices.each do |invoice|
-  #   Invoice.create(id: invoice[:id],
-  #     customer_id: invoice[:customer_id],
-  #     merchant_id: invoice[:merchant_id],
-  #     status: invoice[:status],
-  #     created_at: invoice[:created_at],
-  #     updated_at: invoice[:updated_at])
-  #   end
-  #
-  #   items.each do |item|
-  #     Item.create(id: item[:id],
-  #       customer_id: item[:customer_id],
-  #       merchant_id: item[:merchant_id],
-  #       status: item[:status],
-  #       created_at: item[:created_at],
-  #       updated_at: item[:updated_at])
-  #     end
+CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
+  Merchant.create(m.to_hash)
+end
