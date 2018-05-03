@@ -5,6 +5,8 @@ RSpec.describe 'Visitors' do
       merchant_2 = Merchant.create(name: 'ROBBB')
       merchant_3 = Merchant.create(name: 'Mike')
 
+      merchants = [merchant_1, merchant_2, merchant_3]
+
       visit('/merchants')
 
       expect(page).to have_content(merchant_1.name)
