@@ -1,5 +1,5 @@
 require 'CSV'
-require File.expand_path("../../config/environment", __FILE__)
+# require File.expand_path("../../config/environment", __FILE__)
 
 merchants = CSV.open('./data/merchants.csv', headers: true, header_converters: :symbol)
 # invoices = CSV.open('./data/invoices.csv', headers: true, header_converters: :symbol)
