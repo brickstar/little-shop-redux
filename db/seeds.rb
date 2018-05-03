@@ -4,5 +4,5 @@ require 'pry'
 
 CSV.foreach('./data/merchants.csv', headers: true, header_converters: :symbol) do |m|
   binding.pry
-  Merchant.create(m.to_hash)
+  Merchant.create(name: m[:name])
 end
