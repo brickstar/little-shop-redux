@@ -9,19 +9,35 @@
       <h1 class='site-title'>Merchants</h1>
     </header>
     <% @merchants.each_with_index do |merchant, index| %>
-      <ul>       <!-- will need for items and invoices-->
-        <div class='merchants'>
-          <div>
-            <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
-            <form>
-              <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
-            </form>
-            <form>
-              <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
-            </form>
+      <% if index.odd? %>
+        <ul>       <!-- will need for items and invoices-->
+          <div class='merchants'>
+            <div class='grey'>
+              <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
+              <form>
+                <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+              </form>
+              <form>
+                <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </ul>
+        </ul>
+      <% else %>
+        <ul>       <!-- will need for items and invoices-->
+          <div class='merchants'>
+            <div>
+              <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
+              <form>
+                <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+              </form>
+              <form>
+                <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+              </form>
+            </div>
+          </div>
+        </ul>
+      <% end %>
     <% end %>
   </body>
 </html>
