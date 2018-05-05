@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel='stylesheets' href='./public/main.css'
-    <meta charset='utf-8'>
     <title>Merchants</title>
+    <link rel='stylesheet' href="main.css" title='text/css'>
   </head>
-   <% @merchants.each do |merchant| %>
-    <ul>
-      <p class='merchants'><a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
-      <button name='edit' type='button'>Edit</button>
-      <button name='delete' type='button'>Delete</button></p>
-    </ul>
-   <% end %>
+  <body>
+    <header>
+      <h1 class='site-title'>Merchants</h1>
+    </header>
+    <% @merchants.each do |merchant| %>
+      <ul>       <!-- will need for items and invoices-->
+        <div class='merchants'>
+          <div>
+            <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
+            <form>
+              <button type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+            </form>
+            <form>
+              <button type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+            </form>
+          </div>
+        </div>
+      </ul>
+    <% end %>
+  </body>
 </html>
