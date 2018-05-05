@@ -8,16 +8,16 @@
     <header>
       <h1 class='site-title'>Merchants</h1>
     </header>
-    <% @merchants.each do |merchant| %>
+    <% @merchants.each_with_index do |merchant, index| %>
       <ul>       <!-- will need for items and invoices-->
         <div class='merchants'>
           <div>
             <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
             <form>
-              <button type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+              <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
             </form>
             <form>
-              <button type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+              <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
             </form>
           </div>
         </div>
