@@ -16,13 +16,13 @@
   float: left;
 }
 
-.edit-button {
+.delete-button {
   background-color: rgb(236, 142, 121);
   margin-right: 4px;
   margin-left: 4px;
 }
 
-.delete-button {
+.edit-button {
   background-color: rgb(236, 201, 78);
 }
 

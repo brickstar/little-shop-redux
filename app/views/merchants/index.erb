@@ -5,9 +5,11 @@
     <link rel='stylesheet' href="main.css" title='text/css'>
   </head>
   <body>
-    <header>
-      <h1 class='site-title'>Merchants</h1>
-    </header>
+    <nav>
+      <header>
+        <h1 class='site-title'>Merchants</h1>
+      </header>
+    </nav>
     <% @merchants.each_with_index do |merchant, index| %>
       <% if index.odd? %>
         <ul>       <!-- will need for items and invoices-->
@@ -15,10 +17,10 @@
             <div class='grey'>
               <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
               <form>
-                <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+                <button class='delete-button' type='submit' name='delete' formaction="/merchants/#{merchant.id}/delete">Delete</button>
               </form>
               <form>
-                <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+                <button class='edit-button' type='submit' name='edit' formaction="/merchants/#{<%=merchant.id%>}">Edit</button>
               </form>
             </div>
           </div>
@@ -29,10 +31,10 @@
             <div>
               <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
               <form>
-                <button class='edit-button' type='submit' name='delete' formaction='/merchants/single_merchant'>Delete</button>
+                <button class='delete-button' type='submit' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
               </form>
               <form>
-                <button class='delete-button' type='submit' name='edit' formaction="/merchants/single_merchant/#{<%=merchant.id%>}">Edit</button>
+                <button class='edit-button' type='submit' name='edit' formaction="/merchants/#{<%=merchant.id%>}">Edit</button>
               </form>
             </div>
           </div>
