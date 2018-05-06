@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merchants</title>
+    <link rel='stylesheet' href="main.css" title='text/css'>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">LittleShop</h1>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li class="nav-link"><a href="/merchants">Merchants</a></li>
+          <li class="nav-link"><a href="/items">Items</a></li>
+          <li class="nav-link"><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sub-header">
+      <a class="dashboard-link">Dashboard</a>
+      <h3>Merchants</h3>
+      <a href='/merchants/new' class="create-merchant">Create A New Merchant</a>
+    </div>
+    <section>
+        <ul class='merchants-list'>       <!-- will need for items and invoices-->
+          
+            <li class="merchant merchant-1">
+              <div class='merchant-container'>
+                <a href="/merchants/1">Pearly</a>
+                <a href="/merchants/1/edit">
+                  <button class='edit-button' type='submit'>Edit</button>
+                </a>
+                <form action="/merchants/1" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button id='delete-button-1' type='submit'>Delete</button>
+                </form>
+              </div>
+            </li>
+          
+        </ul>
+    </section>
+    <footer><p>Footer Place Holder</p></footer>
+  </body>
+</html>

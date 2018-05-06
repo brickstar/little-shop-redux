@@ -10,13 +10,13 @@ RSpec.describe 'Visitors' do
 
       expect(current_path).to eq('/merchants/new')
 
-      fill_in 'Name', with: 'Pearly'
-
+      fill_in "name", with: 'Pearly'
       click_button('Create Merchant')
 
       expect(page).to have_content('Pearly')
 
       expect(Merchant.count).to eq(1)
+      save_and_open_page
 
       expect(current_path).to eq('/merchants')
     end
