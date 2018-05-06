@@ -6,7 +6,7 @@ RSpec.describe 'Visitors' do
 
       visit('/merchants')
 
-      click_button('Create A New Merchant')
+      click_link('Create A New Merchant')
 
       expect(current_path).to eq('/merchants/new')
 
