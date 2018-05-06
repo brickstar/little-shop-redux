@@ -6,7 +6,7 @@
   display: flex;
 }
 
-.merchants>* {
+.merchants {
   padding: 2px 0px 2px 10px;
   border: solid 2px black;
   width: 100%;
@@ -16,12 +16,12 @@
   background-color: rgb(236, 142, 121);
   margin-right: 4px;
   margin-left: 4px;
-  float: right;
+  /* float: right; */
 }
 
 .edit-button {
   background-color: rgb(236, 201, 78);
-  float: right;
+  /* float: right; */
 }
 
 .items {

@@ -5,14 +5,15 @@ RSpec.describe 'Visitors' do
     it 'should delete specified merchant and redirected to merchant index' do
 
       merchant_1 = Merchant.create(name: 'Subreenuh')
-      merchant_2 = Merchant.create(name: 'ROBBB')
-      merchant_3 = Merchant.create(name: 'Mike')
-      expect(Merchant.count).to eq(3)
+      # merchant_2 = Merchant.create(name: 'ROBBB')
+      # merchant_3 = Merchant.create(name: 'Mike')
+      expect(Merchant.count).to eq(1)
 
-      save_and_open_page
-      click_link('delete-button')
+      # save_and_open_page
+      click_button('delete-button')
+
       expect(current_path).to eq('/merchants')
-      expect(Merchant.count).to eq(2)
+      expect(Merchant.count).to eq(0)
     end
   end
 end

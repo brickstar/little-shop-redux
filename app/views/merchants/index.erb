@@ -5,41 +5,45 @@
     <link rel='stylesheet' href="main.css" title='text/css'>
   </head>
   <body>
-    <nav>
-      <header>
-        <h1 class='site-title'>Merchants</h1>
-      </header>
-    </nav>
+    <header>
+      <h1 class="logo">LittleShop</h1>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li class="nav-link">Merchants</li>
+          <li class="nav-link">Items</li>
+          <li class="nav-link">Invoices</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sub-header">
+      <a class="dashboard-link">Dashboard</a>
+      <h3>Merchants</h3>
+      <button class="create-button">Create A New Merchant</button>
+    </div>
+    <section>
     <% @merchants.each_with_index do |merchant, index| %>
-      <% if index.odd? %>
-        <ul>       <!-- will need for items and invoices-->
-          <div class='merchants'>
-            <div class='grey'>
+      <!-- <% if index.odd? %> -->
+        <ul class='merchants-list'>       <!-- will need for items and invoices-->
+          <li class='merchant'>
+            <div class='merchant-container'>
               <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
-              <form>
+              <a href="/merchants/<%=merchant.id%>">
+                <button class='edit-button' type='submit'>Edit</button>
+              </a>
+              <a href="/merchants/<%=merchant.id%>/delete">
+                <button class='delete-button' type='submit'>Delete</button>
+              </a>
+              <!-- <form>
                 <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%=merchant.id%>/delete">Delete</button>
-              </form>
-              <form>
-                <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%=merchant.id%>}">Edit</button>
-              </form>
-            </div>
-          </div>
-        </ul>
-      <% else %>
-        <ul>       <!-- will need for items and invoices-->
-          <div class='merchants'>
-            <div>
-              <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
-              <form>
-                <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
-              </form>
-              <form>
                 <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%=merchant.id%>">Edit</button>
-              </form>
+              </form> -->
             </div>
-          </div>
+          </li>
         </ul>
-      <% end %>
+      <!-- <% end %> -->
     <% end %>
+    </section>
+    <footer>
+    </footer>
   </body>
 </html>
