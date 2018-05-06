@@ -17,10 +17,10 @@
             <div class='grey'>
               <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
               <form>
-                <button class='delete-button' type='submit' name='delete' formaction="/merchants/#{merchant.id}/delete">Delete</button>
+                <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%=merchant.id%>/delete">Delete</button>
               </form>
               <form>
-                <button class='edit-button' type='submit' name='edit' formaction="/merchants/#{<%=merchant.id%>}">Edit</button>
+                <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%=merchant.id%>}">Edit</button>
               </form>
             </div>
           </div>
@@ -31,10 +31,10 @@
             <div>
               <a href='https://www.localhost:9393/merchants/single_merchant'><%=merchant.name%></a>
               <form>
-                <button class='delete-button' type='submit' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
+                <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
               </form>
               <form>
-                <button class='edit-button' type='submit' name='edit' formaction="/merchants/#{<%=merchant.id%>}">Edit</button>
+                <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%=merchant.id%>">Edit</button>
               </form>
             </div>
           </div>
