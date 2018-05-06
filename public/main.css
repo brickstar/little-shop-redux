@@ -3,11 +3,11 @@
   margin: 0;
 }
 
-body >* {
-  border: 1px solid black;
+body {
 }
 
 header {
+  border: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
@@ -35,4 +35,16 @@ a {
   display: flex;
   align-items: center;
   padding: 8px 4px;
+}
+
+body {
+  border: 1px solid black;
+}
+
+section {
+  border: 1px solid black;
+}
+
+footer {
+  border: 1px solid black;
 }

@@ -18,7 +18,9 @@
     <div class="sub-header">
       <a class="dashboard-link">Dashboard</a>
       <h3>Merchants</h3>
-      <button class="create-button">Create A New Merchant</button>
+      <a href='/merchants/new'>
+        <button class="create-button">Create A New Merchant</button>
+      </a>
     </div>
     <section>
         <ul class='merchants-list'>       <!-- will need for items and invoices-->
@@ -33,10 +35,6 @@
                   <input type="hidden" name="_method" value="DELETE">
                   <button id='delete-button-<%= merchant.id %>' type='submit'>Delete</button>
                 </form>
-                <!-- <form>
-                  <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
-                  <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%= merchant.id %>">Edit</button>
-                </form> -->
               </div>
             </li>
           <% end %>

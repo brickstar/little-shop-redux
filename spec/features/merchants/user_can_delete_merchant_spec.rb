@@ -1,5 +1,3 @@
-require 'pry'
-
 RSpec.describe 'Visitors' do
   context 'who click delete button' do
     it 'should delete specified merchant and redirected to merchant index' do

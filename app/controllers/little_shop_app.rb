@@ -15,4 +15,9 @@ class LittleShopApp < Sinatra::Base
     Merchant.destroy(id.to_i)
     redirect '/merchants'
   end
+
+  post 'merchant/new' do
+    Merchant.create(params[:name])
+    redirect '/merchants'
+  end
 end
