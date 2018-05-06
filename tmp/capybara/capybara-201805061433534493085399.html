@@ -22,24 +22,24 @@
     </div>
     <section>
         <ul class='merchants-list'>       <!-- will need for items and invoices-->
-          <% @merchants.each do |merchant| %>
-            <li class="merchant merchant-<%= merchant.id %>">
+          
+            <li class='merchant'>
               <div class='merchant-container'>
-                <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-                <a href="/merchants/<%= merchant.id %>/edit">
+                <a href='https://www.localhost:9393/merchants/single_merchant'>Subreenuh</a>
+                <a href="/merchants/1/edit">
                   <button class='edit-button' type='submit'>Edit</button>
                 </a>
-                <form action="/merchants/<%= merchant.id %>" method="POST">
+                <form action="/merchants/1" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
-                  <button id='delete-button-<%= merchant.id %>' type='submit'>Delete</button>
+                  <button id='delete-button-1' type='submit'>Delete</button>
                 </form>
                 <!-- <form>
-                  <button class='delete-button' type='submit' value='delete' formaction="/merchants/<%= merchant.id %>/delete">Delete</button>
-                  <button class='edit-button' type='submit' value='edit' formaction="/merchants/<%= merchant.id %>">Edit</button>
+                  <button class='delete-button' type='submit' value='delete' formaction="/merchants/1/delete">Delete</button>
+                  <button class='edit-button' type='submit' value='edit' formaction="/merchants/1">Edit</button>
                 </form> -->
               </div>
             </li>
-          <% end %>
+          
         </ul>
     </section>
     <footer><p>Footer Place Holder</p></footer>
