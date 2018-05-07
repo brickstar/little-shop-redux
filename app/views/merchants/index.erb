@@ -21,6 +21,7 @@
       <a href='/merchants/new' class="create-merchant">Create A New Merchant</a>
     </div>
     <section>
+      <tr>
         <ul class='merchants-list'>       <!-- will need for items and invoices-->
           <% @merchants.each do |merchant| %>
             <li class="merchant merchant-<%= merchant.id %>">
@@ -37,6 +38,7 @@
             </li>
           <% end %>
         </ul>
+      </tr>
     </section>
     <footer><p>Footer Place Holder</p></footer>
   </body>
