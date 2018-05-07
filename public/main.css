@@ -12,8 +12,34 @@ header {
   justify-content: space-between;
 }
 
+.logo {
+  font-size: 90%;
+  display: flex;
+  align-self: center;
+  padding-left: 10px;
+}
+
 ul {
   list-style-type: none;
+}
+
+.sub-header{
+  display: block;
+  text-align: center;
+  height: 90px;
+  width: relative;
+  border: 1px solid black;
+  background-color: rgba(158, 158, 158, 0.63);
+}
+
+.create-merchant {
+  border: 2px solid black;
+  margin-top: 55px;
+  margin-bottom: 15px;
+  background-color: white;
+  padding: 5px;
+  color: black;
+  box-shadow: 2px 2px black;
 }
 
 a {
