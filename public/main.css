@@ -42,8 +42,14 @@ ul {
   box-shadow: 2px 2px black;
 }
 
-.merchant-container {
-  border: 1px solid black;
+.merchant-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+section tr:nth-child(odd){
+  background-color: #4C8BF5;
+  color: #fff;
 }
 
 a {
