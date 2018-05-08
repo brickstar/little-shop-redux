@@ -11,14 +11,14 @@ RSpec.describe 'Visitors' do
 
       visit('/invoices')
 
-      save_and_open_page
-      within ".invoice-#{invoice_2.merchant_id}" do
+      within ".invoice-#{invoice_2.id}" do
         click_button('Delete')
       end
 
       expect(current_path).to eq('/invoices')
+      
       expect(Invoice.count).to eq(2)
-      expect(page).to_not have_content('12335938')
+      expect(page).to_not have_content('12335456')
       expect(page).to have_content('12335678')
     end
   end

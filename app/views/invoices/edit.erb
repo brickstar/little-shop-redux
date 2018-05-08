@@ -20,8 +20,8 @@
     </div>
     <section>
       <form action="/invoices/<%= @invoice.merchant_id %>" method="POST">
-        Name<br><input type='text' name='name'>
-        <input type="hidden" name="_method" value="PUT">
+        Status<br><select id='status-dropdown'>
+      </select>
         <button type='submit'>Update Invoice</button>
       </form>
     </section>
