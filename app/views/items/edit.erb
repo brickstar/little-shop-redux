@@ -19,7 +19,7 @@
       <h3>Edit Socket</h3>
     </div>
     <section>
-      <form action="/items" method="POST">
+      <form action="/items/<%= @item.id %>" method="POST">
         <select name='merchant[name]' id='merchant-dropdown'>
           <% @merchants.each do |merchant| %>
             <option value='merchant'>
@@ -31,6 +31,7 @@
         Description<br><input type='text' name='description'>
         Price<br><input type='text' name='price'>
         Image<br><input type='text' name='image'>
+        <input type="hidden" name="_method" value="PATCH">
         <button type='submit'>Update Item</button>
       </form>
     </section>
