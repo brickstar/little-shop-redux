@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Item New</title>
+    <link rel='stylesheet' href="main.css" title='text/css'>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">LittleShop</h1>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li class="nav-link"><a href="/merchants">Merchants</a></li>
+          <li class="nav-link"><a href="/items">Items</a></li>
+          <li class="nav-link"><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sub-header">
+      <h3>Create New Item</h3>
+    </div>
+    <section>
+      <form action="/items" method="POST">
+        <select name='merchant[name]' id='merchant-dropdown'>
+          <% @merchants.each do |merchant| %>
+          <option value='merchant'>
+            <%= merchant.name %>
+          </option>
+          <% end %>
+
+        </select>
+        Title<br><input type='text' name='title'>
+        Description<br><input type='text' name='description'>
+        Price<br><input type='text' name='price'>
+        Image<br><input type='text' name='image'>
+        <button type='submit'>Create Item</button>
+      </form>
+    </section>
+    <footer><p>Footer Place Holder</p></footer>
+  </body>
+</html>

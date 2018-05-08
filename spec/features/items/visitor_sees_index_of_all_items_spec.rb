@@ -14,13 +14,11 @@ RSpec.describe 'Visitors' do
                            price: 77,
                            image: 'https://www.blackangels.com')
 
-      items = [item_1, item_2, item_3]
-
       visit('/items')
-      
+
       expect(page).to have_content(item_1.title)
       expect(page).to have_content(item_2.price)
-      expect(page).to have_content(item_3.description)
+      expect(page).to have_content(item_3.title)
     end
   end
 end

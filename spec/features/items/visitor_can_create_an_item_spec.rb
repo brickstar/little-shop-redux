@@ -1,6 +1,6 @@
 RSpec.describe 'Visitors' do
-  context 'who click create new merchant button' do
-    it 'should create a new merchant and should be redirected to said merchant page' do
+  context 'who click create new item button' do
+    it 'should create a new item and should be redirected to item page' do
 
       expect(Item.count).to eq(0)
 
@@ -10,11 +10,11 @@ RSpec.describe 'Visitors' do
 
       expect(current_path).to eq('/items/new')
 
-      # fill_in "name", with: 'Pearly'
-      #
-      # click_button('Create Merchant')
-      #
-      # expect(page).to have_content('Pearly')
+      fill_in "title", with: 'Pearly'
+
+      click_button('Create Item')
+
+      expect(page).to have_content('Pearly')
 
       expect(Item.count).to eq(1)
 
