@@ -35,4 +35,9 @@ class LittleShopApp < Sinatra::Base
     merchant.update([params.first].to_h)
     redirect "/merchants/#{merchant.id}"
   end
+
+  get '/items' do
+    @items = Item.all
+    erb :"items/index"
+  end
 end

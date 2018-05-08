@@ -17,10 +17,10 @@ RSpec.describe 'Visitors' do
       items = [item_1, item_2, item_3]
 
       visit('/items')
-
+      
       expect(page).to have_content(item_1.title)
-      expect(page).to have_content(item_2.title)
-      expect(page).to have_content(item_3.title)
+      expect(page).to have_content(item_2.price)
+      expect(page).to have_content(item_3.description)
     end
   end
 end
