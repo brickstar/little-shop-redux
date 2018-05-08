@@ -4,15 +4,15 @@ RSpec.describe 'Visitors' do
       item_1 = Item.create(title: 'Polyphonic Spree',
                            description: 'Symphonic Psych Rock',
                            price: 47,
-                           image: 'polyphonicspree.com')
+                           image: 'https://www.polyphonicspree.com')
       item_2 = Item.create(title: 'Heartless Bastards',
                            description: 'Rock',
                            price: 13,
-                           image: 'heartlessbastards.com')
+                           image: 'https://www.heartlessbastards.com')
       item_3 = Item.create(title: 'The Black Angels',
                            description: 'Psych Rock',
                            price: 77,
-                           image: 'blackangels.com')
+                           image: 'https://www.blackangels.com')
 
       items = [item_1, item_2, item_3]
 
