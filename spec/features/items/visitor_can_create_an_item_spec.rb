@@ -11,6 +11,8 @@ RSpec.describe 'Visitors' do
       expect(current_path).to eq('/items/new')
 
       fill_in "title", with: 'Pearly'
+      fill_in "description", with: 'Adorable'
+      fill_in "price", with: '1000000'
 
       click_button('Create Item')
 
