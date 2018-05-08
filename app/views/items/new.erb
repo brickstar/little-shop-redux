@@ -20,18 +20,17 @@
     </div>
     <section>
       <form action="/items" method="POST">
-        <select name='merchant[name]' id='merchant-dropdown'>
+        Merchant<br><select name='merchant[name]' id='merchant-dropdown'>
           <% @merchants.each do |merchant| %>
-          <option value='merchant'>
-            <%= merchant.name %>
-          </option>
+            <option value='merchant'>
+              <%= merchant.name %>
+            </option>
           <% end %>
-
-        </select>
-        Title<br><input type='text' name='title'>
-        Description<br><input type='text' name='description'>
-        Price<br><input type='text' name='price'>
-        Image<br><input type='text' name='image'>
+        </select><br>
+        Title<br><input type='text' name='title'><br>
+        Description<br><input type='text' name='description'><br>
+        Price<br><input type='text' name='price'><br>
+        Image<br><input type='text' name='image'><br>
         <button type='submit'>Create Item</button>
       </form>
     </section>
