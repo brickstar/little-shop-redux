@@ -37,7 +37,7 @@ ul {
   background-color: rgba(158, 158, 158, 0.63);
 }
 
-.create-merchant {
+.create-button {
   border: 2px solid black;
   margin-top: 55px;
   margin-bottom: 15px;
@@ -46,6 +46,7 @@ ul {
   color: black;
   box-shadow: 2px 2px black;
 }
+
 /*
 .merchant-list {
   display: flex;
