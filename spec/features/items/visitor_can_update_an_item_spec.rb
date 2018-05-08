@@ -7,10 +7,7 @@ RSpec.describe 'Visitors' do
 
       visit("/items/#{item.id}")
 
-save_and_open_page
-
       click_link('Edit')
-
       expect(current_path).to eq("/items/#{item.id}/edit")
 
       fill_in "title", with: 'Pearly'

@@ -68,6 +68,12 @@ class LittleShopApp < Sinatra::Base
     erb :"items/index"
   end
 
+  patch '/items/:id' do
+    item = Item.find(params[:id])
+    item.update(params[:item])
+    redirect "/items/#{item.id}"
+  end
+
   get '/items/new' do
     @merchants = Merchant.all.order(name: :asc)
     erb :"items/new"
