@@ -26,5 +26,6 @@ CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |i
     price: item[:unit_price],
     image: 'image',
     created_at: item[:created_at],
-    updated_at: item[:updated_at])
+    updated_at: item[:updated_at],
+    merchant_id: item[:merchant_id])
 end
