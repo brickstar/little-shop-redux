@@ -12,7 +12,6 @@ RSpec.describe 'Visitors' do
       find('#status-dropdown').find("option[value='returned']").select_option
 
       click_button('Update Invoice')
-save_and_open_page
 
       expect(page).to have_content('Returned')
 
