@@ -24,10 +24,10 @@
       <tr>
         <ul class='merchants-list'>       <!-- will need for items and invoices-->
           <% @merchants.each do |merchant| %>
-            <li class="merchant merchant-<%= merchant.id %>">
-              <div class='merchant-container'>
+            <li class="merchant merchant-<%= merchant.id %> merchant-container">
                 <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-                <a href="/merchants/<%= merchant.id %>/edit">Edit</a>
+                <div class="buttons">
+                <a class='edit' href="/merchants/<%= merchant.id %>/edit">Edit</a>
                 <form action="/merchants/<%= merchant.id %>" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
                   <button id='delete-button-<%= merchant.id %>' type='submit'>Delete</button>
