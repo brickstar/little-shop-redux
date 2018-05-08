@@ -9,8 +9,7 @@ RSpec.describe 'Visitors' do
 
       expect(current_path).to eq("/merchants/#{merchant.id}/edit")
 
-      fill_in "name", with: 'Pearly'
-      save_and_open_page
+      fill_in "merchant[name]", with: 'Pearly'
 
       click_button('Update Merchant')
 
