@@ -19,14 +19,16 @@
       <h3>Invoice: <%= @invoice.id.to_s %> - <%= @invoice.status.capitalize %></h3>
     </div>
     <section>
-      <!-- <form action="/invoices/<%= @invoice.id %>" method="POST"> -->
         Status<br>
-      <select id='status-dropdown'>
-        <option value = 'pending'>Pending</option>
-        <option value = 'shipped'>Shipped</option>
-        <option value = 'returned'>Returned</option>
+        <form action="/invoices/<%= @invoice.id %>" method="POST">
+      <select name='invoice[status]' id='status-dropdown'>
+        <option value='pending'>Pending</option>
+        <option value='shipped'>Shipped</option>
+        <option value='returned'>Returned</option>
       </select>
-        <button type='submit'>Update Invoice</button>
+      <input type="hidden" name="_method" value="PATCH">
+          <button type='submit'>Update Invoice</button>
+        </form>
     </section>
     <footer><p>Footer Place Holder</p></footer>
   </body>

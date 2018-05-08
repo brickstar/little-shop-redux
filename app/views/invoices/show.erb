@@ -16,7 +16,7 @@
       </nav>
     </header>
     <div class="sub-header">
-      <h3>Edit <%= @invoice.merchant_id %></h3>
+      <h3>Invoice: <%= @invoice.id.to_s %> - <%= @invoice.status.capitalize %></h3>
     </div>
     <section>
       <form action="/invoices/<%= @invoice.id %>" method="POST">

@@ -8,12 +8,11 @@ RSpec.describe 'Visitors' do
       click_link('Edit')
 
       expect(current_path).to eq("/invoices/#{invoice.id}/edit")
-      save_and_open_page
-      within 'status-dropdown' do
-        click_on 'Returned'
-      end
+
+      find('#status-dropdown').find("option[value='returned']").select_option
 
       click_button('Update Invoice')
+save_and_open_page
 
       expect(page).to have_content('Returned')
 

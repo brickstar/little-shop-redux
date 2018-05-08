@@ -1,9 +1,22 @@
 require 'pry'
 
 class LittleShopApp < Sinatra::Base
+
   get '/merchants' do
     @merchants = Merchant.all
     erb :'merchants/index'
+  end
+
+  patch '/merchants/:id' do
+    @merchant = Merchant.find(params[:id])
+    @merchant.update(params[:merchant])
+    redirect '/merchants'
+  end
+
+  patch '/invoices/:id' do
+    invoice = Invoice.find(params[:id])
+    invoice.update(params[:invoice])
+    redirect "/invoices/#{invoice.id}"
   end
 
   get '/invoices' do
@@ -45,7 +58,7 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/edit"
   end
 
-  put '/merchants/:id' do
+  patch '/merchants/:id' do
     merchant = Merchant.find(params[:id])
     merchant.update([params.first].to_h)
     redirect "/merchants/#{merchant.id}"
@@ -53,12 +66,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/invoices/:id/edit' do
     @invoice = Invoice.find(params[:id])
-    erb :"invoices/edit"
-  end
 
-  put '/invoices/:id' do
-    invoice = Invoice.find(params[:id])
-    invoice.update([params.first].to_h)
-    redirect "/invoices/#{invoice.id}"
+    erb :"invoices/edit"
   end
 end
