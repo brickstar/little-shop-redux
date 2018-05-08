@@ -45,4 +45,15 @@ class LittleShopApp < Sinatra::Base
     merchant.update([params.first].to_h)
     redirect "/merchants/#{merchant.id}"
   end
+
+  get '/invoices/:id/edit' do
+    @invoice = Invoice.find(params[:merchant_id])
+    erb :"invoices/edit"
+  end
+
+  put '/invoices/:id' do
+    invoice = Invoice.find(params[:merchant_id])
+    invoice.update([params.first].to_h)
+    redirect "/invoices/#{invoice.merchant_id}"
+  end
 end
