@@ -42,6 +42,16 @@ ul {
   box-shadow: 2px 2px black;
 }
 
+.merchant-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+section tr:nth-child(odd){
+  background-color: #4C8BF5;
+  color: #fff;
+}
+
 a {
   text-decoration: none;
 }
