@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Merchant Show</title>
+    <title>Merchant Edit</title>
     <link rel='stylesheet' href="main.css" title='text/css'>
   </head>
   <body>
     <header>
-      <h3 class="logo">LittleShop</h3>
+      <h1 class="logo">LittleShop</h1>
       <nav class="navigation">
         <ul class="nav-links">
           <li class="nav-link"><a href="/merchants">Merchants</a></li>
@@ -20,8 +20,8 @@
     </div>
     <section>
       <form action="/merchants/<%= @merchant.id %>" method="POST">
-        Name<br><input type='text' name='name'>
-        <input type="hidden" name="_method" value="PUT">
+        Name<br><input type='text' name='merchant[name]'>
+        <input type="hidden" name="_method" value="PATCH">
         <button type='submit'>Update Merchant</button>
       </form>
     </section>

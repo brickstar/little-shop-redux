@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-      <h1 class="logo">LittleShop</h1>
+      <h3 class="logo">LittleShop</h3>
       <nav class="navigation">
         <ul class="nav-links">
           <li class="nav-link"><a href="/merchants">Merchants</a></li>
@@ -21,14 +21,13 @@
       <a href='/merchants/new' class="create-merchant">Create A New Merchant</a>
     </div>
     <section>
+      <tr>
         <ul class='merchants-list'>       <!-- will need for items and invoices-->
           <% @merchants.each do |merchant| %>
-            <li class="merchant merchant-<%= merchant.id %>">
-              <div class='merchant-container'>
+            <li class="merchant merchant-<%= merchant.id %> merchant-container">
                 <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-                <a href="/merchants/<%= merchant.id %>/edit">
-                  <button class='edit-button' type='submit'>Edit</button>
-                </a>
+                <div class="buttons">
+                <a class='edit' href="/merchants/<%= merchant.id %>/edit">Edit</a>
                 <form action="/merchants/<%= merchant.id %>" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
                   <button id='delete-button-<%= merchant.id %>' type='submit'>Delete</button>
@@ -37,6 +36,7 @@
             </li>
           <% end %>
         </ul>
+      </tr>
     </section>
     <footer><p>Footer Place Holder</p></footer>
   </body>
