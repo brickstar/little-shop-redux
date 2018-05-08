@@ -1,3 +1,30 @@
- <ul>
-   <li><%= @merchant.name %></li>
- </ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merchant Show</title>
+    <link rel='stylesheet' href="main.css" title='text/css'>
+  </head>
+  <body>
+    <header>
+      <h3 class="logo">LittleShop</h3>
+      <nav class="navigation">
+        <ul class="nav-links">
+          <li class="nav-link"><a href="/merchants">Merchants</a></li>
+          <li class="nav-link"><a href="/items">Items</a></li>
+          <li class="nav-link"><a href="/invoices">Invoices</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sub-header">
+      <h3>Edit <%= @merchant.name %></h3>
+    </div>
+    <section>
+      <form action="/merchants/<%= @merchant.id %>" method="POST">
+        Name<br><input type='text' name='name'>
+        <input type="hidden" name="_method" value="PUT">
+        <button type='submit'>Update Merchant</button>
+      </form>
+    </section>
+    <footer><p>Footer Place Holder</p></footer>
+  </body>
+</html>
