@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Merchant Edit</title>
+    <title>Invoice Show</title>
     <link rel='stylesheet' href="main.css" title='text/css'>
   </head>
   <body>
     <header>
-      <h1 class="logo">LittleShop</h1>
+      <h3 class="logo">LittleShop</h3>
       <nav class="navigation">
         <ul class="nav-links">
           <li class="nav-link"><a href="/merchants">Merchants</a></li>
@@ -16,12 +16,12 @@
       </nav>
     </header>
     <div class="sub-header">
-      <h3>Edit <%= @merchant.name %></h3>
+      <h3>Invoice: <%= @invoice.id.to_s %> - <%= @invoice.status.capitalize %></h3>
     </div>
     <section>
-      <form action="/merchants/<%= @merchant.id %>" method="POST">
-        Name<br><input type='text' name='merchant[name]'>
-        <input type="hidden" name="_method" value="PATCH">
+      <form action="/invoices/<%= @invoice.id %>" method="POST">
+        Name<br><input type='text' name='name'>
+        <input type="hidden" name="_method" value="PUT">
         <button type='submit'>Update Merchant</button>
       </form>
     </section>
