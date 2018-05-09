@@ -91,6 +91,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/items/:id/edit' do
     @item = Item.find(params[:id])
+    @merchants = Merchant.all
     erb :"items/edit"
   end
 end
