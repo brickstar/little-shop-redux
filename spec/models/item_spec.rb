@@ -50,7 +50,7 @@ end
                            image: 'https://www.heartlessbastards.com')
       item_3 = Item.create(title: 'The Black Angels',
                            description: 'Psych Rock',
-                           price: 40,
+                           price: 30,
                            image: 'https://www.blackangels.com')
 
       expect(Item.average_price_per_item).to eq(20)

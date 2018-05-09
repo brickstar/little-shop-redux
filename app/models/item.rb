@@ -9,4 +9,8 @@ class Item < ActiveRecord::Base
   def self.total_item_count
     all.count
   end
+
+  def self.average_price_per_item
+    average(:price)
+  end
 end
