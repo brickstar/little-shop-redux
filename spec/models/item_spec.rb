@@ -17,7 +17,7 @@ RSpec.describe Item do
 end
 
   describe 'Class Methods' do
-    context '.total_item_count' do
+    context '.total_count' do
       it 'should return a total count of items' do
       item_1 = Item.create(title: 'Polyphonic Spree',
                            description: 'Symphonic Psych Rock',
@@ -32,12 +32,12 @@ end
                            price: 77,
                            image: 'https://www.blackangels.com')
 
-      expect(Item.total_item_count).to eq(3)
+      expect(Item.total_count).to eq(3)
     end
   end
 
 
-    context '.average_price_per_item' do
+    context '.average_price' do
       it 'returns average price for item' do
       item_1 = Item.create(title: 'Polyphonic Spree',
                            description: 'Symphonic Psych Rock',
@@ -52,11 +52,11 @@ end
                            price: 30,
                            image: 'https://www.blackangels.com')
 
-      expect(Item.average_price_per_item).to eq(20)
+      expect(Item.average_price).to eq(20)
     end
   end
 
-    context '.most_recently_created' do
+    context '.newest' do
       it 'should return the newest item' do
         item_1 = Item.create(title: 'Polyphonic Spree',
                              description: 'Symphonic Psych Rock',
@@ -71,7 +71,9 @@ end
                              price: 77,
                              image: 'https://www.blackangels.com')
 
-        expect(Item.most_recently_created).to eq(item_3)
+        expect(Item.newest).to eq(item_1)
       end
     end
+
+
 end

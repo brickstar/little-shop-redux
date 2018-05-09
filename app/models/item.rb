@@ -6,11 +6,15 @@ class Item < ActiveRecord::Base
   validates :image, presence: false
   belongs_to :merchant
 
-  def self.total_item_count
+  def self.total_count
     all.count
   end
 
-  def self.average_price_per_item
+  def self.average_price
     average(:price)
+  end
+
+  def self.newest
+    order(:created_at).first
   end
 end
