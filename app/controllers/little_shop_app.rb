@@ -105,4 +105,9 @@ class LittleShopApp < Sinatra::Base
     @items = Item.all
     erb :"items/dashboard"
   end
+
+  get '/merchants-dashboard' do
+    @merchants_with_most_items = Merchant.merchant_item_info.order(:items_count)
+    erb :"items/dashboard"
+  end
 end
