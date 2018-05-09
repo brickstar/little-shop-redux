@@ -21,6 +21,7 @@
     <section>
       <form action="/merchants/<%= @merchant.id %>" method="POST">
         Name<br><input type='text' name='merchant[name]'>
+        <a class='cancel' href="/merchants/<%= @merchant.id %>"><button>Cancel</button></a>
         <input type="hidden" name="_method" value="PATCH">
         <button type='submit'>Update Merchant</button>
       </form>
