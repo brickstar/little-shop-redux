@@ -16,7 +16,7 @@ RSpec.describe 'Visitors' do
       end
 
       expect(current_path).to eq('/invoices')
-      
+
       expect(Invoice.count).to eq(2)
       expect(page).to_not have_content('12335456')
       expect(page).to have_content('12335678')

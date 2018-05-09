@@ -94,4 +94,9 @@ class LittleShopApp < Sinatra::Base
     @merchants = Merchant.all
     erb :"items/edit"
   end
+
+  delete '/items/:id' do |id|
+    Item.destroy(id.to_i)
+    redirect '/items'
+  end
 end
