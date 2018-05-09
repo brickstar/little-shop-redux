@@ -26,6 +26,7 @@
           <option value='shipped'>Shipped</option>
           <option value='returned'>Returned</option>
         </select>
+        <a class='cancel' href="/invoices/<%= @invoice.id %>"><button>Cancel</button></a>
         <input type="hidden" name="_method" value="PATCH">
         <button type='submit'>Update Invoice</button>
       </form>
