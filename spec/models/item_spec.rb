@@ -55,4 +55,23 @@ end
       expect(Item.average_price_per_item).to eq(20)
     end
   end
+
+    context '.most_recently_created' do
+      it 'should return the newest item' do
+        item_1 = Item.create(title: 'Polyphonic Spree',
+                             description: 'Symphonic Psych Rock',
+                             price: 47,
+                             image: 'https://www.polyphonicspree.com')
+        item_2 = Item.create(title: 'Heartless Bastards',
+                             description: 'Rock',
+                             price: 13,
+                             image: 'https://www.heartlessbastards.com')
+        item_3 = Item.create(title: 'The Black Angels',
+                             description: 'Psych Rock',
+                             price: 77,
+                             image: 'https://www.blackangels.com')
+
+        expect(Item.most_recently_created).to eq(item_3)
+      end
+    end
 end
