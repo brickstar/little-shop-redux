@@ -16,7 +16,6 @@ RSpec.describe Item do
   end
 end
 
-
   describe 'Class Methods' do
     context '.total_item_count' do
       it 'should return a total count of items' do
