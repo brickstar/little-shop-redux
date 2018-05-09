@@ -6,7 +6,7 @@ RSpec.describe 'Visitors' do
       item = Item.create(title: 'Sabrina',
                          description: 'Awesome',
                          price: '100',
-                         merchant_id: "#{merchant.id}")
+                         merchant_id: 1)
 
       visit("/items/#{item.id}/edit")
 
