@@ -1,18 +1,15 @@
 RSpec.describe 'Visitors' do
   context 'who click edit button' do
     it 'should update an existing invoice and should be redirected to invoice page' do
-      invoice = Invoice.create(status: 'pending', merchant_id: 12335938)
+      invoice = Invoice.create(status: 'pending', merchant_id: 12_335_938)
 
       visit('/invoices')
 
       click_link('Edit')
 
       expect(current_path).to eq("/invoices/#{invoice.id}/edit")
-# save_and_open_page
-        # find('#status-dropdown').find("option[value='returned']").select_option
-        # within('#status-dropdown') do
-          select('Returned', from: 'status-dropdown')
-        # end
+
+      select('Returned', from: 'status-dropdown')
 
       click_button('Update Invoice')
 

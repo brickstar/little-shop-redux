@@ -20,7 +20,10 @@
       <a class="dashboard-link"></a>
       <h3><%= @item.title %></h3>
       <a href="/items/<%= @item.id %>/edit">Edit</a>
-      <button href='/items/edit' class="create-button">Delete</button>
+      <form action="/items/<%= @item.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button id='delete-button-<%= @item.id %>' type='submit'>Delete</button>
+      </form>
     </div>
   <ul>
     <li><%= @item.merchant.name %></li>

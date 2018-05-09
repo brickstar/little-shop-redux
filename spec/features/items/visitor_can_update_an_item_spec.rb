@@ -4,18 +4,19 @@ RSpec.describe 'Visitors' do
       merchant = Merchant.create(name: 'Dingle')
 
       item = Item.create(title: 'Sabrina',
-                          description: 'Awesome',
-                          price: '100',
-                          merchant_id: "#{merchant.id}")
+                         description: 'Awesome',
+                         price: '100',
+                         merchant_id: "#{merchant.id}")
 
       visit("/items/#{item.id}")
 
       click_link('Edit')
       expect(current_path).to eq("/items/#{item.id}/edit")
 
-      fill_in "title", with: 'Pearly', visible: false
-      fill_in "description", with: 'Adorable'
-      fill_in "price", with: '1000000'
+      select('Dingle', from: "item[merchant_id]")
+      fill_in "item[title]", with: 'Pearly'
+      fill_in "item[description]", with: 'Adorable'
+      fill_in "item[price]", with: '1000000'
 
       click_button('Update Item')
 
