@@ -20,9 +20,9 @@
     </div>
     <section>
       <form action="/items" method="POST">
-        Merchant<br><select name='merchant[name]' id='merchant-dropdown'>
+        Merchant<br><select name='item[merchant_id]' id='merchant-dropdown'>
           <% @merchants.each do |merchant| %>
-            <option value='merchant'>
+            <option value='<%= merchant.id %>'>
               <%= merchant.name %>
             </option>
           <% end %>
