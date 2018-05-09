@@ -57,14 +57,14 @@ ul {
   margin-right: ;
 }
 
-.edit {
+/* .edit {
   border-radius: 27%;
   font-size: 12px;
   border: 1px solid black;
   margin-top: 3%;
   margin-bottom: 2%;
   margin-right: -15%;
-}
+} */
 
 .merchant-container {
   display: flex;

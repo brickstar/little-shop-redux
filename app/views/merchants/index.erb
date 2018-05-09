@@ -27,7 +27,7 @@
             <li class="merchant merchant-<%= merchant.id %> merchant-container">
                 <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
                 <div class="buttons">
-                <a class='edit' href="/merchants/<%= merchant.id %>/edit">Edit</a>
+                <a class='edit' href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
                 <form action="/merchants/<%= merchant.id %>" method="POST">
                   <input type="hidden" name="_method" value="DELETE">
                   <button id='delete-button-<%= merchant.id %>' type='submit'>Delete</button>
