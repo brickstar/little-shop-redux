@@ -9,4 +9,8 @@ class Merchant < ActiveRecord::Base
     AS total_cost, count(items.id) AS items_count, avg(items.price)
     AS average_price").group("merchants.id")
   end
+
+  def self.merchant_with_most_items
+    merchant_item_info.order('items_count DESC').first
+  end
 end

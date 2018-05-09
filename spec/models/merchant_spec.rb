@@ -17,19 +17,19 @@ end
     context '.merchant_item_info' do
       it "should return total cost, items count and average price" do
 
-      merchant = Merchant.create!(name: 'Subreenah')
+      merchant = Merchant.create(name: 'Subreenah')
 
-      item_1 = Item.create!(title: 'Polyphonic Spree',
+      item_1 = Item.create(title: 'Polyphonic Spree',
                            description: 'Symphonic Psych Rock',
                            price: 10,
                            image: 'https://www.polyphonicspree.com',
                            merchant_id: 1)
-      item_2 = Item.create!(title: 'Heartless Bastards',
+      item_2 = Item.create(title: 'Heartless Bastards',
                            description: 'Rock',
                            price: 20,
                            image: 'https://www.heartlessbastards.com',
                            merchant_id: 1)
-      item_3 = Item.create!(title: 'The Black Angels',
+      item_3 = Item.create(title: 'The Black Angels',
                            description: 'Psych Rock',
                            price: 30,
                            image: 'https://www.blackangels.com',
@@ -42,6 +42,43 @@ end
       expect(Merchant.merchant_item_info[0].total_cost).to eq(total_cost)
       expect(Merchant.merchant_item_info[0].items_count).to eq(item_count)
       expect(Merchant.merchant_item_info[0].average_price).to eq(average_price)
+    end
+  end
+
+  context '.merchants_with_most_items' do
+    it 'should return the merchant with highest item count' do
+
+      merchant_1 = Merchant.create(name: 'Subreenah')
+
+      item_1 = Item.create(title: 'Polyphonic Spree',
+                           description: 'Symphonic Psych Rock',
+                           price: 10,
+                           image: 'https://www.polyphonicspree.com',
+                           merchant_id: 1)
+      item_2 = Item.create(title: 'Heartless Bastards',
+                           description: 'Rock',
+                           price: 20,
+                           image: 'https://www.heartlessbastards.com',
+                           merchant_id: 1)
+      item_3 = Item.create(title: 'The Black Angels',
+                           description: 'Psych Rock',
+                           price: 30,
+                           image: 'https://www.blackangels.com',
+                           merchant_id: 1)
+      merchant_2 = Merchant.create(name: 'Subreenah')
+
+      item_4 = Item.create(title: 'x',
+                            description: 'x',
+                            price: 10,
+                            image: 'https://www.polyphonicspree.com',
+                            merchant_id: 2)
+      item_5 = Item.create(title: 'x',
+                            description: 'x',
+                            price: 20,
+                            image: 'https://www.heartlessbastards.com',
+                            merchant_id: 2)
+
+      expect(Merchant.merchant_with_most_items).to eq(merchant_1)
     end
   end
 end
