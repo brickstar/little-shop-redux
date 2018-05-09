@@ -21,16 +21,16 @@
     <section>
       <form action="/items/<%= @item.id %>" method="POST">
         <select name='item[merchant_id]' id='merchant-dropdown'>
-          <% @merchants.each do |merchant| %>
-            <option value='<%= merchant.id %>'>
-              <%= merchant.name %>
-            </option>
-          <% end %>
-        </select>
-        Title<br><input type='text' name='item[title]'>
-        Description<br><input type='text' name='item[description]'>
-        Price<br><input type='text' name='item[price]'>
-        Image<br><input type='text' name='item[image]'>
+                 <% @merchants.each do |merchant| %>
+                   <option value='<%= merchant.id %>'>
+                     <%= merchant.name %>
+                   </option>
+                 <% end %>
+        </select><br>
+        Title<br><input type='text' name='item[title]'id='title'>
+        Description<br><input type='text' name='item[description]'id='description'>
+        Price<br><input type='text' name='item[price]' id='price'>
+        Image<br><input type='text' name='item[image]' id='image'>
         <input type="hidden" name="_method" value="PATCH">
         <button type='submit'>Update Item</button>
       </form>
