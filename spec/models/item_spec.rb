@@ -93,5 +93,4 @@ end
       expect(Item.oldest).to eq(item_3)
     end
   end
-
 end

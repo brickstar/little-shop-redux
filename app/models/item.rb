@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true
   validates :image, presence: false
+  
   belongs_to :merchant
 
   def self.total_count
