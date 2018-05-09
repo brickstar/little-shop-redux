@@ -20,12 +20,4 @@
       <h3>Items Dashboard</h3>
       <a href='/items/new' class="create-button">Create A New Item</a>
     </div>
-    <section>
-      <tr>
-        <ul class='items-list'>
-         <% @items.each do |item| %>
-            <a href="/items/<%= item.id %>"><%= item.title %></a>
-            <li><%= item.price %></li>
-        </ul>
-       <% end %>
 </html>
