@@ -1,7 +1,6 @@
 RSpec.describe 'Visitors' do
   context 'who visit /merchants/:id' do
     it 'should see a single merchant' do
-
       merchant_1 = Merchant.create(name: 'Subreenuh')
       merchant_2 = Merchant.create(name: 'ROBBB')
       merchant_3 = Merchant.create(name: 'Mike')

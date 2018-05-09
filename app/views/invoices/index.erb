@@ -2,23 +2,23 @@
 <html>
   <head>
     <title>Invoices</title>
-    <link rel='stylesheet' href="main.css" title='text/css'>
+    <link rel='stylesheet' href='main.css' title='text/css'>
   </head>
   <body>
     <header>
-      <h3 class="logo">LittleShop</h3>
-      <nav class="navigation">
-        <ul class="nav-links">
-          <li class="nav-link"><a href="/merchants">Merchants</a></li>
-          <li class="nav-link"><a href="/items">Items</a></li>
-          <li class="nav-link"><a href="/invoices">Invoices</a></li>
+      <h3 class='logo'>LittleShop</h3>
+      <nav class='navigation'>
+        <ul class='nav-links'>
+          <li class='nav-link'><a href='/merchants'>Merchants</a></li>
+          <li class='nav-link'><a href='/items'>Items</a></li>
+          <li class='nav-link'><a href='/invoices'>Invoices</a></li>
         </ul>
       </nav>
     </header>
-    <div class="sub-header">
-      <a class="dashboard-link">Dashboard</a>
+    <div class='sub-header'>
+      <a class='dashboard-link'>Dashboard</a>
       <h3>Invoices</h3>
-      <a href='/invoices/new' class="create-Invoice">Create A New Invoice</a>
+      <a href='/invoices/new' class='create-Invoice'>Create A New Invoice</a>
     </div>
     <section>
       <tr>
@@ -28,8 +28,8 @@
               <div class='invoice-container'>
                 <a href="/invoices/<%= invoice.id %>"><%= invoice.merchant_id %></a>
                 <a href="/invoices/<%= invoice.id %>/edit"><button>Edit</button></a>
-                <form action="/invoices/<%= invoice.id %>" method="POST">
-                  <input type="hidden" name="_method" value="DELETE">
+                <form action="/invoices/<%= invoice.id %>" method='POST'>
+                  <input type='hidden' name='_method' value='DELETE'>
                   <button id='delete-button-<%= invoice.id %>' type='submit'>Delete</button>
                 </form>
               </div>
