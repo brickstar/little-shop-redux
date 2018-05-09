@@ -32,6 +32,7 @@
         Price<br><input type='text' name='item[price]' id='price'>
         Image<br><input type='text' name='item[image]' id='image'>
         <input type="hidden" name="_method" value="PATCH">
+        <a class='cancel' href="/items/<%= @item.id %>"><button>Cancel</button></a>
         <button type='submit'>Update Item</button>
       </form>
     </section>
