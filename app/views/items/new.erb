@@ -2,24 +2,24 @@
 <html>
   <head>
     <title>Item New</title>
-    <link rel='stylesheet' href="main.css" title='text/css'>
+    <link rel='stylesheet' href='main.css' title='text/css'>
   </head>
   <body>
     <header>
-      <h1 class="logo">LittleShop</h1>
-      <nav class="navigation">
-        <ul class="nav-links">
-          <li class="nav-link"><a href="/merchants">Merchants</a></li>
-          <li class="nav-link"><a href="/items">Items</a></li>
-          <li class="nav-link"><a href="/invoices">Invoices</a></li>
+      <h1 class='logo'>LittleShop</h1>
+      <nav class='navigation'>
+        <ul class='nav-links'>
+          <li class='nav-link'><a href='/merchants'>Merchants</a></li>
+          <li class='nav-link'><a href='/items'>Items</a></li>
+          <li class='nav-link'><a href='/invoices'>Invoices</a></li>
         </ul>
       </nav>
     </header>
-    <div class="sub-header">
+    <div class='sub-header'>
       <h3>Create New Item</h3>
     </div>
     <section>
-      <form action="/items" method="POST">
+      <form action='/items' method='POST'>
         Merchant<br><select name='item[merchant_id]' id='merchant-dropdown'>
           <% @merchants.each do |merchant| %>
             <option value='<%= merchant.id %>'>
@@ -31,7 +31,7 @@
         Description<br><input type='text' name='description'><br>
         Price<br><input type='text' name='price'><br>
         Image<br><input type='text' name='image'><br>
-        <a class='cancel' href="/items"><button>Cancel</button></a>
+        <a class='cancel' href='/items'><button>Cancel</button></a>
         <button type='submit'>Create Item</button>
       </form>
     </section>

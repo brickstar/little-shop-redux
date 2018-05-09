@@ -76,7 +76,7 @@ end
     end
 
     context '.oldest' do
-      it 'should return the oldes item' do
+      it 'should return the oldest item' do
         item_1 = Item.create(title: 'Polyphonic Spree',
                              description: 'Symphonic Psych Rock',
                              price: 47,

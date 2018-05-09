@@ -1,7 +1,6 @@
 RSpec.describe 'Visitors' do
   context 'who click cancel button from merchant new page' do
     it 'should be redirected to merchant index page' do
-
       expect(Merchant.count).to eq(0)
 
       visit('/merchants')

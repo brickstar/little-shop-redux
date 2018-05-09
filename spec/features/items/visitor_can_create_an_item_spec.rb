@@ -1,7 +1,6 @@
 RSpec.describe 'Visitors' do
   context 'who click create new item button' do
     it 'should create a new item and should be redirected to item page' do
-
       expect(Item.count).to eq(0)
 
       visit('/items')
@@ -10,9 +9,9 @@ RSpec.describe 'Visitors' do
 
       expect(current_path).to eq('/items/new')
 
-      fill_in "title", with: 'Pearly'
-      fill_in "description", with: 'Adorable'
-      fill_in "price", with: '1000000'
+      fill_in 'title', with: 'Pearly'
+      fill_in 'description', with: 'Adorable'
+      fill_in 'price', with: '1000000'
 
       click_button('Create Item')
 
